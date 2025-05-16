@@ -140,8 +140,8 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: addTodo,
-        label: const Text("Add Todo"),
-        icon: const Icon(Icons.add),
+        label: const Text("Add Todo", style: TextStyle(color: Colors.white)),
+        icon: const Icon(Icons.add, color: Colors.white),
         backgroundColor: Colors.teal,
       ),
     );
