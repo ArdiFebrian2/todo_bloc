@@ -10,14 +10,14 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
     // Add Todo
     on<OnAddTodo>((event, emit) async {
       emit(TodoLoading(todos: state.todos));
-      await Future.delayed(const Duration(milliseconds: 500));
+      await Future.delayed(const Duration(milliseconds: 200));
       final newTodos = [...state.todos, event.newTodo];
       emit(TodoAdded(todos: newTodos));
     });
 
     on<OnUpdateTodo>((event, emit) async {
       emit(TodoLoading(todos: state.todos));
-      await Future.delayed(const Duration(milliseconds: 500));
+      await Future.delayed(const Duration(milliseconds: 200));
       final updatedTodos = [...state.todos];
       updatedTodos[event.index] = event.newTodo;
       emit(TodoUpdate(todos: updatedTodos));
@@ -25,7 +25,7 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
 
     on<OnRemoveTodo>((event, emit) async {
       emit(TodoLoading(todos: state.todos));
-      await Future.delayed(const Duration(milliseconds: 500));
+      await Future.delayed(const Duration(milliseconds: 200));
       final updatedTodos = [...state.todos]..removeAt(event.index);
       emit(TodoRemove(todos: updatedTodos));
     });
